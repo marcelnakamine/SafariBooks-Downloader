@@ -1,17 +1,18 @@
 # SafariBooks Downloader & ePub Generator
 SafariBooks-Downloader is a project created and maintained by [Nico Haenggi](http://www.nicohaenggi.com/).
+This is a fork to support the SSO authentication provided by [Shardul Mahadik](https://github.com/shardulm94).
 
 The project is currently setup in two branches.
 - `master` also known as `stable` - The ePub generator 'should' be stable on this branch, and is generally well tested
 - `dev` also known as `unstable` - The ePub generator is being developed on this branch, and is not always well tested and stable
 
 ## Support
-If you discover a bug in the generator, please [search the issue tracker](https://github.com/nicohaenggi/SafariBooks-Downloader/issues?q=is%3Aissue+sort%3Aupdated-desc) first. If it hasn't been reported, please [create a new issue](https://github.com/nicohaenggi/SafariBooks-Downloader/issues/new).
+If you discover a bug in the generator, please [search the issue tracker](https://github.com/marcelnakamine/SafariBooks-Downloader/issues?q=is%3Aissue+sort%3Aupdated-desc) first. If it hasn't been reported, please [create a new issue](https://github.com/marcelnakamine/SafariBooks-Downloader/issues/new).
 
-### [Feature Requests](https://github.com/nicohaenggi/SafariBooks-Downloader/labels/Feature%20Request)
-If you have a great idea to improve the generator, please [search the feature tracker](https://github.com/nicohaenggi/SafariBooks-Downloader/labels/Feature%20Request) first to ensure someone else hasn't already come up with the same great idea. If it hasn't been requested, please [create a new request](https://github.com/nicohaenggi/SafariBooks-Downloader/issues/new). While you're there vote on other feature requests to let the me know what is most important to you.
+### [Feature Requests](https://github.com/marcelnakamine/SafariBooks-Downloader/labels/Feature%20Request)
+If you have a great idea to improve the generator, please [search the feature tracker](https://github.com/marcelnakamine/SafariBooks-Downloader/labels/Feature%20Request) first to ensure someone else hasn't already come up with the same great idea. If it hasn't been requested, please [create a new request](https://github.com/marcelnakamine/SafariBooks-Downloader/issues/new). While you're there vote on other feature requests to let the me know what is most important to you.
 
-### [Pull Requests](https://github.com/nicohaenggi/SafariBooks-Downloader/pulls)
+### [Pull Requests](https://github.com/marcelnakamine/SafariBooks-Downloader/pulls)
 If you'd like to make your own changes ensure your Pull Request is made against the  `dev` branch.
 
 # Installation Guide
@@ -33,7 +34,7 @@ npm -v
 If the command returns a version number, you're all set. Next, we'll clone the repository.
 
 ```bash
-git clone https://github.com/nicohaenggi/SafariBooks-Downloader.git
+git clone https://github.com/marcelnakamine/SafariBooks-Downloader.git
 cd SafariBooks-Downloader
 ```
 
@@ -79,7 +80,9 @@ The tool provides the following six options. The options **--bookid, --username,
 * **-b, --bookid <bookid>**
     * the book id of the SafariBooksOnline ePub to be generated
     you can find the book id by having a look at the URL while reading the book
-    e.g. `https://www.safaribooksonline.com/library/view/building-apis-with/9781484224427/A435096_1_En_7_Chapter.html` whereas the id will be `9781484224427`
+    e.g. `https://learning.oreilly.com/library/view/building-apis-with/9781484224427/A435096_1_En_7_Chapter.html` whereas the id will be `9781484224427`
+* **-w, --weblogin**
+    * will use the web SSO authentication
 * **-u, --username <username>**
     * username of the SafariBooksOnline user - must have a **paid/trial membership**, otherwise will not be able to access the books
 * **-p, --password <password>**
@@ -93,12 +96,17 @@ The tool provides the following six options. The options **--bookid, --username,
 
 An example showing how a SafariBooksOnline with id **9781484224427** is downloaded and converted into a ePub file **testbook.epub**.
 ```bash
-safaribooks-downloader -b 9781484224427 -u nicohaenggi -p MySuperSecurePassword -o /Users/nicohanggi/Desktop/testbook.epub
+safaribooks-downloader -b 9781484224427 -u marcelnakamine -p MySuperSecurePassword -o /Users/marcelnakamine/Desktop/testbook.epub
 ```
 
 An example showing how a SafariBooksOnline with id **9892595335538** is downloaded and converted into a ePub file **testdebugbook.epub**.
 ```bash
-safaribooks-downloader -d -b 9781484224427 -u nicohaenggi -p MySuperSecurePassword -o /Users/nicohanggi/Desktop/testbook.epub
+safaribooks-downloader -d -b 9781484224427 -u marcelnakamine -p MySuperSecurePassword -o /Users/marcelnakamine/Desktop/testbook.epub
+```
+
+An example showing how a SafariBooksOnline with id **9892595335538** is downloaded from SSO authentication and converted into a ePub file **testdebugbook.epub**.
+```bash
+safaribooks-downloader -d -b 9781484224427 -w -o /Users/marcelnakamine/Desktop/testbook.epub
 ```
 # Features
 - [x] generating ePub with cover image, authors and publisher
@@ -112,4 +120,4 @@ safaribooks-downloader -d -b 9781484224427 -u nicohaenggi -p MySuperSecurePasswo
 
 # Copyright & License
 
-Copyright (c) 2017 Nico Haenggi - Released under the [MIT License](https://github.com/nicohaenggi/SafariBooks-Downloader/blob/master/LICENSE)
+Copyright (c) 2017 Nico Haenggi - Released under the [MIT License](https://github.com/marcelnakamine/SafariBooks-Downloader/blob/master/LICENSE)
