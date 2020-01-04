@@ -117,6 +117,7 @@ safaribooks-downloader -d -b 9781484224427 -w -o /Users/marcelnakamine/Desktop/t
 # Credits
 - [Nico Haenggi](http://www.nicohaenggi.com): conception & development
 - [cyrilis](https://github.com/cyrilis): a big thanks to cyrillis for his epub-gen package which I relied upon heavily while integrating my own epub generator
+- [Shardul Mahadik](https://github.com/shardulm94): implementation of SSO authentication support
 
 # Copyright & License
 
